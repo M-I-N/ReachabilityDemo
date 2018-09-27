@@ -11,7 +11,7 @@ Any type that conforms to the `Reachable` protocol will be able to be notified w
 [Reachability.swift](https://github.com/ashleymills/Reachability.swift) file needs to be imported in the project.
 
 ## Example
-```
+```swift
 class FirstViewController: UIViewController, Reachable {
     // Reachable protocol requirement
     let reachability: Reachability = Reachability()!
