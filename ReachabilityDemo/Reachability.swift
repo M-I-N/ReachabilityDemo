@@ -106,7 +106,7 @@ public class Reachability {
     }
 
     fileprivate var isRunningOnDevice: Bool = {
-        #if (arch(x86_64) || arch(i386)) && os(iOS)
+        #if targetEnvironment(simulator)
             return false
         #else
             return true
@@ -253,7 +253,7 @@ extension SCNetworkReachabilityFlags {
         guard isReachableFlagSet else { return .none }
 
         // If we're reachable, but not on an iOS device (i.e. simulator), we must be on WiFi
-        #if (arch(x86_64) || arch(i386)) && os(iOS)
+        #if targetEnvironment(simulator)
         return .wifi
         #else
         var connection = Connection.none
